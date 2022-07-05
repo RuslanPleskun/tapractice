@@ -1,0 +1,302 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.softserve.edu</groupId>
+    <artifactId>ta202204</artifactId>
+    <version>1.0</version>
+
+    <packaging>jar</packaging>
+
+    <name>${project.artifactId}</name>
+    <url>http://maven.apache.org</url>
+
+
+    <properties>
+        <!-- - - - - - Encoding - - - - - -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- - - - - - Java - - - - - -->
+        <java.version>1.8</java.version>
+        <!-- - - - - - Reports - - - - - -->
+        <testng.reports.directory>./target/surefire-reports/test-output</testng.reports.directory>
+        <!-- - - - - - Resources - - - - -->
+        <testng.runners>./src/test/resources/runner/</testng.runners>
+        <aspectj.version>1.9.9.1</aspectj.version>
+        <!-- - - - - - Password - - - - - -->
+        <!-- <application.password>null123</application.password> -->
+    </properties>
+
+    <dependencies>
+
+        <!-- - - - - - JSON - - - - - -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
+        <!-- - - - - - Test - - - - - -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>1.8.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- <dependency> -->
+        <!-- <groupId>org.testng</groupId> -->
+        <!-- <artifactId>testng</artifactId> -->
+        <!-- <version>6.14.3</version> -->
+        <!-- <scope>test</scope> -->
+        <!-- </dependency> -->
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- - - - - - DB - - - - - -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.25</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.23</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.1.212</version>
+            <!-- <scope>test</scope> -->
+        </dependency>
+
+        <!-- - - - - - Mocks - - - - - -->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-core</artifactId>
+            <version>2.0.9</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito2</artifactId>
+            <version>2.0.9</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-testng</artifactId>
+            <version>2.0.9</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- - - - - - Automation - - - - - -->
+        <!-- <dependency> -->
+        <!-- <groupId>org.seleniumhq.selenium</groupId> -->
+        <!-- <artifactId>selenium-server</artifactId> -->
+        <!-- <version>3.141.59</version> -->
+        <!-- <scope>test</scope> -->
+        <!-- </dependency> -->
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.1.4</version>
+            <scope>test</scope>
+        </dependency>
+
+		<!-- Add needed webdriver version -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.2.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>htmlunit-driver</artifactId>
+            <version>3.60.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <!-- - - - Logger - - - -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.36</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <!-- <artifactId>slf4j-log4j12</artifactId> -->
+            <artifactId>slf4j-reload4j</artifactId>
+            <version>1.7.36</version>
+            <!-- <scope>runtime</scope>-->
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+    		<groupId>org.apache.logging.log4j</groupId>
+    		<artifactId>log4j-api</artifactId>
+    		<version>2.17.2</version>
+		</dependency>
+        
+        <dependency>
+    		<groupId>org.apache.logging.log4j</groupId>
+    		<artifactId>log4j-core</artifactId>
+    		<version>2.17.2</version>
+		</dependency>
+
+        <!-- - - - Reports - - - -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.17.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+            <!-- <version>1.9.9.1</version> -->
+            <!-- <scope>test</scope> -->
+        </dependency>
+        
+        <!-- - - - Excel - - - -->
+        <dependency>
+    		<groupId>org.apache.poi</groupId>
+    		<artifactId>poi</artifactId>
+    		<version>5.2.2</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>org.apache.poi</groupId>
+    		<artifactId>poi-ooxml</artifactId>
+    		<version>5.2.2</version>
+		</dependency>
+
+    </dependencies>
+
+    <build>
+    	<resources>
+             <resource>
+                  <directory>resources/properties</directory>
+             </resource>
+        </resources> 
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.java</include>
+                    </includes>
+                    <reportsDirectory>${testng.reports.directory}</reportsDirectory>
+                    <suiteXmlFiles>
+                    	<!-- HW4 -->
+                    	<!-- <suiteXmlFile>${testng.runners}hw4testng.xml</suiteXmlFile> -->
+                    	<!-- HW5 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-additems.xml</suiteXmlFile> -->
+                    	<!-- HW6 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-verifylogin.xml</suiteXmlFile> -->
+                    	<!-- HW7, HW8 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-verifyprice.xml</suiteXmlFile> -->
+                    	<!-- HW9 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-filtercities.xml</suiteXmlFile> -->
+                    	<!-- HW10 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-browsers.xml</suiteXmlFile> -->
+                    	<!-- HW11 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-filloutform.xml</suiteXmlFile> -->
+                    	<!-- HW12 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-selectcurrency.xml</suiteXmlFile> -->
+                    	<!-- HW13 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-productpresence.xml</suiteXmlFile> -->
+                    	<!-- HW14 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-register.xml</suiteXmlFile> -->
+                    	<!-- HW15 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-currency.xml</suiteXmlFile> -->
+                    	<!-- HW16 -->
+                    	<!-- <suiteXmlFile>${testng.runners}testng-login.xml</suiteXmlFile> -->
+                    	<!-- Contact Us Form -->
+                    	<suiteXmlFile>${testng.runners}testng-contactusform.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <!-- <suiteXmlFile>testng2.xml</suiteXmlFile> -->
+                    <!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->
+                    <!-- 						<suiteXmlFile>testng3par.xml</suiteXmlFile> -->
+                    <!-- </suiteXmlFiles> -->
+                    <argLine>
+                    	-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

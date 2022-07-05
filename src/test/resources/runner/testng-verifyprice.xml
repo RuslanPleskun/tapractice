@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" parallel="tests" thread-count="3">
+	<test name="Test HW7 and HW8" enabled="false">
+	<parameter name="browser" value="chrome"></parameter>
+		<groups>
+			<define name="hw7">
+				<include name="css"></include>
+			</define>
+			<define name="hw8">
+				<include name="xpath"></include>
+			</define>
+			<run>
+				<include name="hw8"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.softserve.homework07.TestPrice"></class>
+			<class name="com.softserve.homework08.TestPriceXPath"></class>
+		</classes>
+	</test>
+	<test name="HW8 Chrome Test" enabled="true">
+	<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.softserve.homework08.TestPriceXPath"></class>
+		</classes>
+	</test>
+	<test name="HW8 Microsoft Edge Test" enabled="false">
+	<parameter name="browser" value="edge"></parameter>
+		<classes>
+			<class name="com.softserve.homework08.TestPriceXPath"></class>
+		</classes>
+	</test>
+	<test name="HW8 Firefox Test" enabled="false">
+	<parameter name="browser" value="firefox"></parameter>
+		<classes>
+			<class name="com.softserve.homework08.TestPriceXPath"></class>
+		</classes>
+	</test>
+</suite>
